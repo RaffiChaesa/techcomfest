@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap');
+
+:root {
+    --fontmonsterrat: 'Montserrat', sans-serif;
+    --fontplayfair: 'Playfair Display', sans-serif;
+    --Green-Shade: #EEF0E5;
+    --Green: #304D30;
+    --White : #fff;
+}
+
+/* Hide scrollbar for Chrome, Safari Opera, Edge */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    scrollbar-width: none;
+    margin: 0;
+}
+
+section {
+    height: 100vh;
+}
+
+.section1 {
+    background-image: url(assets/Background1_ExplorePage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    nav {
+        padding: 0 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: var(--White, #FFF);
+            text-align: center;
+            font-family: var(--fontmonsterrat);
+            font-weight: 500;
+            /*unresponsive*/
+            font-size: 20px;
+        }
+
+        h4 {
+            color: var(--White, #FFF);
+            font-family: var(--fontmonsterrat);
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            /*unresponsive*/
+            font-size: 32px;
+        }
+    }
+
+    .section1Details {
+        /*position*/
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 5%;
+        /*Display*/
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2em;
+        width: 23.25%;
+
+        div {
+            color: var(--Green-Shade);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: .625em;
+            align-self: stretch;
+
+            h2 {
+                font-family: var(--fontmonsterrat);
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                /*unresponsive*/
+                font-size: 36px;
+            }
+
+            h1 {
+                font-family: var(--fontplayfair);
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                /*unresponsive*/
+                font-size: 96px;
+                letter-spacing: 4.8px;
+            }
+
+            p {
+                font-family: var(--fontmonsterrat);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                /*unresponsive*/
+                font-size: 24px;
+            }
+        }
+
+        #DetailsButton {
+            color: var(--White);
+            display: flex;
+            padding: 10px 40px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            border-radius: 50px;
+            background: var(--Green);
+        }
+    }
+
+}
