@@ -1,15 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap');
 
 :root {
+    /*Font Sizes*/
+    --Tiny: 1.25rem;
+    --Small: 1.5rem;
+    --Medium: 2rem;
+    --Large: 3.125rem;
+    --Title: 6rem;
+    /*Font Family*/
     --fontmonsterrat: 'Montserrat', sans-serif;
     --fontplayfair: 'Playfair Display', sans-serif;
-    --Green-Shade: #EEF0E5;
+    /*Color Palletes*/
+    --White: #fff;
+    --Black: #000;
+    --Red-Shade: #F5E8EA;
     --Green: #304D30;
-    --White : #fff;
+    --Green-Thin: #223622;
+    --Sage-Green: #6E826E;
+    --Green-Shade: #EEF0E5;
 }
 
 /* Hide scrollbar for Chrome, Safari Opera, Edge */
-body::-webkit-scrollbar {
+html::-webkit-scrollbar {
     display: none;
 }
 
@@ -23,7 +35,7 @@ section {
 }
 
 .section1 {
-    background-image: url(assets/Background1_ExplorePage.png);
+    background-image: url(assets/Explore-img/Background1_ExplorePage.png);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -40,7 +52,7 @@ section {
             font-family: var(--fontmonsterrat);
             font-weight: 500;
             /*unresponsive*/
-            font-size: 20px;
+            font-size: var(--Tiny);
         }
 
         h4 {
@@ -50,7 +62,7 @@ section {
             font-weight: 600;
             line-height: normal;
             /*unresponsive*/
-            font-size: 32px;
+            font-size: var(--Medium);
         }
     }
 
@@ -64,7 +76,7 @@ section {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 2em;
+        gap: 1rem;
         width: 23.25%;
 
         div {
@@ -72,16 +84,15 @@ section {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: .625em;
-            align-self: stretch;
+            gap: -2rem;
+            /* align-self: stretch; */
 
             h2 {
                 font-family: var(--fontmonsterrat);
                 font-style: normal;
                 font-weight: 500;
                 line-height: normal;
-                /*unresponsive*/
-                font-size: 36px;
+                font-size: var(--Medium);
             }
 
             h1 {
@@ -89,8 +100,9 @@ section {
                 font-style: normal;
                 font-weight: 600;
                 line-height: normal;
+                /*change this*/
+                font-size: var(--Title);
                 /*unresponsive*/
-                font-size: 96px;
                 letter-spacing: 4.8px;
             }
 
@@ -99,22 +111,182 @@ section {
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
-                /*unresponsive*/
-                font-size: 24px;
+                font-size: var(--Small);
             }
         }
 
-        #DetailsButton {
-            color: var(--White);
-            display: flex;
-            padding: 10px 40px;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            border: none;
-            border-radius: 50px;
-            background: var(--Green);
+    }
+
+    #DetailsButton {
+        position: absolute;
+        top: 90%;
+        left: 95%;
+        transform: translate(-95%, -90%);
+        color: var(--White);
+        display: inline-flex;
+        padding: 1.875rem 1.25rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.625rem;
+        border: 1px solid var(--White);
+        border-radius: 3.125rem;
+        background: none;
+    }
+
+    #DetailsButton:hover {
+        background-color: rgba(255, 255, 255, .3);
+        cursor: pointer;
+    }
+
+}
+
+.section2 {
+    background-image: url(assets/Explore-img/Section1Dec1.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 30%;
+    background-color: var(--White);
+    display: flex;
+
+    div {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Pictures {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+
+        #Content1 {
+            max-width: 55%;
+            position: absolute;
+        }
+
+        #Content2 {
+            max-width: 28%;
+            position: absolute;
+            top: 45%;
+            left: 58%;
         }
     }
 
+    .Details {
+        flex-direction: column;
+        padding-right: 5%;
+
+        h3 {
+            color: var(--Black);
+            font-family: var(--fontmonsterrat);
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            font-size: var(--Medium);
+        }
+
+        h2 {
+            color: var(--Black);
+            font-family: var(--fontplayfair);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            font-size: var(--Large);
+        }
+
+        p {
+            color: var(--Black);
+            font-family: var(--fontmonsterrat);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            font-size: var(--Small);
+        }
+    }
+}
+
+.section3 {
+    background-image: url(assets/Explore-img/Section2Dec1.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: 20%;
+    background-color: var(--Green-Shade);
+    display: flex;
+    flex-direction: row-reverse;
+
+    div {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Pictures {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+
+        #Content3 {
+            max-width: 60%;
+            position: absolute;
+        }
+
+    }
+
+    .Details {
+        flex-direction: column;
+        padding-left: 5%;
+        padding-right: 5%;
+
+        h3 {
+            color: var(--Black);
+            font-family: var(--fontmonsterrat);
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            font-size: var(--Medium);
+        }
+
+        h2 {
+            color: var(--Black);
+            font-family: var(--fontplayfair);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            font-size: var(--Large);
+        }
+
+        p {
+            color: var(--Black);
+            font-family: var(--fontmonsterrat);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            font-size: var(--Small);
+        }
+
+        #dec1 {
+            z-index: 0;
+            position: absolute;
+            left: 0%;
+        }
+    }
+}
+
+.section4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .CTA {
+        background-image: url(assets/Explore-img/Section4CTABackground.png);
+        border: none;
+        border-radius: 3.125rem;
+        font-size: var(--Large);
+        font-family: var(--fontplayfair);
+        font-weight: 700;
+        color: var(--White);
+        /*unresponsive*/
+        width: 79.125rem;
+        height: 43.75rem;
+        
+    }
 }
