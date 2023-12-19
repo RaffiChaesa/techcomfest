@@ -91,51 +91,9 @@ section {
         }
     }
 
-    nav {
-        height: 12%;
-        display: flex;
-        padding: 10px 100px;
-        justify-content: space-between;
-        align-items: center;
-        color: #FFFFFF;
-
-        h2 {
-            color: #FFF;
-            font-family: var(--fontmonsterrat);
-            font-size: clamp(0.5rem, 0.8rem + 0.7vw, 3rem);
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-        }
-
-        ul {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            align-content: center;
-            gap: 0.625rem;
-            flex: 1 0 0;
-            flex-wrap: wrap;
-
-            li {
-                display: flex;
-                padding: 1.875rem 1.25rem;
-                justify-content: center;
-                align-items: center;
-                gap: 0.625rem;
-                color: #FFF;
-                font-family: var(--fontmonsterrat);
-                font-size: clamp(0.5rem, 0.8rem + 0.5vw, 3rem);
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-            }
-        }
-    }
-
     .header {
         width: 100%;
-        height: 65%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -165,10 +123,11 @@ section {
 
         button {
             display: flex;
-            padding: 0.625rem 1.5rem;
+            flex-direction: column;
+            padding: 0.3rem 1.7rem;
             justify-content: center;
             align-items: center;
-            gap: 0.625rem;
+            gap: 0.2rem;
             border-radius: 3.125rem;
             background-color: rgba(0, 0, 0, 0);
             border: 1px solid #FFF;
@@ -196,10 +155,11 @@ section {
     display: flex;
     flex-direction: column;
     background-color: #FFF;
-    background-image: url(assets/top-left-bg.png), url(assets/bottom-right-bg.png);
-    background-repeat: no-repeat, no-repeat;
-    background-position: top left, bottom right;
-    background-size: 15%, 15%;
+    background-image: url(assets/home/top-left-bg.png), url(assets/home/top-right-bg.png), url(assets/home/bottom-bg.png);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: top left, top right, bottom;
+    background-size: 15%, 15%, 100%;
+    background-position-y: auto, auto, 10%;
     width: 100%;
     justify-content: start;
     align-items: center;
