@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gallery.css">
+    <title>Gallery</title>
+</head>
+
+<body>
+    <main id="sumatera" class="gallery-main">
+        <section class="container">
+            <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0" class="image-track">
+                <section class="header">
+                    <div class="image-bg">
+                        <img class="image" src="assets/gallery/sumatera/BackgroundImage.svg">
+                    </div>
+                    <nav>
+                        <span>Back</span>
+                        <h2>Pesona</h2>
+                    </nav>
+                    <div class="hero">
+                        <span>
+                            Immersed in Natural Beauty:
+                            A Visual Journey through Sumatra.
+                        </span>
+                        <p>Discover the essence of Sumatra's natural beauty through captivating visuals in 'Immersed in
+                            Natural Beauty'. This collection showcases the island's diverse landscapes, biodiversity,
+                            and vibrant cultures in a concise journey of untamed allure.</p>
+                    </div>
+                    <div class="cta">
+                        <button onclick="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 44 24"
+                                fill="none">
+                                <path d="M2 2L22 22L42 2" stroke="white" stroke-width="4" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </section>
+                <div class="img-section">
+                    <img src="assets/gallery/sumatera/tradition1.jpg" alt="">
+                    <img src="assets/gallery/sumatera/tradition2.jpg" alt="">
+                </div>
+                <div class="img-section">
+                    <img src="assets/gallery/sumatera/buildings1.jpg" alt="">
+                    <img src="assets/gallery/sumatera/buildings2.jpg" alt="">
+                </div>
+                <div class="img-section">
+                    <img src="assets/gallery/sumatera/biodiversity1.jpg" alt="">
+                    <img src="assets/gallery/sumatera/biodiversity2.jpg" alt="">
+                    <img src="assets/gallery/sumatera/biodiversity3.jpg" alt="">
+                    <img src="assets/gallery/sumatera/biodiversity4.jpg" alt="">
+                </div>
+                <div class="img-section">
+                    <img src="assets/gallery/sumatera/nature1.jpg" alt="">
+                    <img src="assets/gallery/sumatera/nature2.jpg" alt="">
+                    <img src="assets/gallery/sumatera/nature3.jpg" alt="">
+                </div>
+                <section class="back">
+                    <button>Home</button>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <main id="kalimantan" class="gallery-main">
+        <section class="section1">
+            <span>Header</span>
+        </section>
+        <section class="section2">
+            <span>Gallery</span>
+        </section>
+        <section class="section3">
+            <span>Home</span>
+        </section>
+    </main>
+
+    <main id="jawa-bali" class="gallery-main">
+        <section class="section1">
+            <span>Header</span>
+        </section>
+        <section class="section2">
+            <span>Gallery</span>
+        </section>
+        <section class="section3">
+            <span>Home</span>
+        </section>
+    </main>
+
+    <main id="ntt-ntb" class="gallery-main">
+        <section class="section1">
+            <span>Header</span>
+        </section>
+        <section class="section2">
+            <span>Gallery</span>
+        </section>
+        <section class="section3">
+            <span>Home</span>
+        </section>
+    </main>
+
+    <main id="maluku" class="gallery-main">
+        <section class="section1">
+            <span>Header</span>
+        </section>
+        <section class="section2">
+            <span>Gallery</span>
+        </section>
+        <section class="section3">
+            <span>Home</span>
+        </section>
+    </main>
+
+    <main id="sulawesi" class="gallery-main">
+        <section class="section1">
+            <span>Header</span>
+        </section>
+        <section class="section2">
+            <span>Gallery</span>
+        </section>
+        <section class="section3">
+            <span>Home</span>
+        </section>
+    </main>
+
+    <main id="papua" class="gallery-main">
+        <section class="section1">
+            <span>Header</span>
+        </section>
+        <section class="section2">
+            <span>Gallery</span>
+        </section>
+        <section class="section3">
+            <span>Home</span>
+        </section>
+    </main>
+
+    <!-- <script src="https://unpkg.com/intersection-observer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/color-thief@2.2.5/js/color-thief.js"></script> -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            console.log(urlParams);
+
+            const mainParam = urlParams.get('main');
+            console.log(mainParam);
+
+            const mains = document.querySelectorAll('.gallery-main');
+            mains.forEach(main => main.style.display = 'none');
+
+            if (mainParam) {
+                const mainToShow = document.getElementById(mainParam);
+                console.log(mainToShow)
+                if (mainToShow) {
+                    mainToShow.style.display = 'block';
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.getElementById("image-track");
+            let prevPercentage = 0;
+
+            const handleOnDown = e => {
+                track.dataset.mouseDownAt = e.deltaY;
+                handleOnMove(e);
+            }
+
+            const handleOnUp = () => {
+                track.dataset.mouseDownAt = "0";
+            }
+
+            const handleOnMove = e => {
+                if (track.dataset.mouseDownAt === "0") return;
+
+                const mouseDelta = parseFloat(track.dataset.mouseDownAt) + e.deltaY,
+                    maxDelta = window.innerHeight * 25;
+
+                const percentage = (mouseDelta / maxDelta) * -100,
+                    nextPercentageUnconstrained = parseFloat(prevPercentage) + percentage,
+                    nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -91);
+
+                track.dataset.prevPercentage = nextPercentage;
+                prevPercentage = nextPercentage;
+
+                if (!isNaN(nextPercentage)) {
+                    track.animate({
+                        transform: `translate(0%, ${nextPercentage}%)`
+                    }, { duration: 3000, fill: "forwards" });
+                }
+            }
+
+            let isScrolling = false;
+
+            window.addEventListener('wheel', function (e) {
+                if (!isScrolling) {
+                    isScrolling = true;
+
+                    handleOnDown(e);
+
+                    setTimeout(function () {
+                        isScrolling = false;
+                    }, 10);
+                }
+            });
+
+
+            window.onmouseup = e => handleOnUp(e);
+
+            window.ontouchend = e => handleOnUp(e.touches[0]);
+
+            // window.onmousemove = e => handleOnMove(e);
+
+            // window.ontouchmove = e => handleOnMove(e.touches[0]);
+        });
+    </script>
+
+
+</body>
+
+</html>
