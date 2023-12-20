@@ -12,13 +12,13 @@
     <main id="sumatera" class="explore-main">
         <section class="section1">
             <nav>
-                <a href="index.html">Back</a>
+                <a href="home.html">Back</a>
                 <h4>Pesona</h4>
             </nav>
             <div class="section1Details">
                 <div>
-                    <h2>Explore</h2>
-                    <h1>Sumatera</h1>
+                    <span id="h2">Explore</span>
+                    <span id="h1">Sumatera</span>
                     <p>Sumatra, the sixth-largest island in the world, is located in western Indonesia. Abundant in
                         natural resources, including tropical forests, mountains, and lakes. Medan is the capital of
                         North Sumatra Province. The island boasts diverse ethnicities, cultures, and traditions.</p>
@@ -37,8 +37,8 @@
                 <img id="Content2" src="assets/Explore-img/Content2_ExplorePage.png" alt="">
             </div>
             <div class="Details">
-                <h3>Culture</h3>
-                <h2>Culture in Sumatera</h2>
+                <span id="h3">Culture</span>
+                <span id="h2">Culture in Sumatera</span>
                 <p>Sumatra's culture is diverse and rich, with unique traditions among its ethnic groups. Batak people showcase customs and the Tortor dance, while the Minangkabau have a matriarchal tradition and perform the randai dance. Artistic expressions like woodcarving and songket weaving highlight cultural beauty. Traditional performances, including wayang kulit and gamelan music, along with iconic dishes like rendang and sate padang, contribute to Sumatra's cultural wealth.</p>
             </div>
         </section>
@@ -47,13 +47,13 @@
                 <img id="Content3" src="assets/Explore-img/Content3_ExplorePage.png" alt="">
             </div>
             <div class="Details">
-                <h3>Culture</h3>
-                <h2>Culture in Sumatera</h2>
+                <span id="h3">Culture</span>
+                <span id="h2">Culture in Sumatera</span>
                 <p>Sumatra's culture is diverse and rich, with unique traditions among its ethnic groups. Batak people showcase customs and the Tortor dance, while the Minangkabau have a matriarchal tradition and perform the randai dance. Artistic expressions like woodcarving and songket weaving highlight cultural beauty. Traditional performances, including wayang kulit and gamelan music, along with iconic dishes like rendang and sate padang, contribute to Sumatra's cultural wealth.</p>
             </div>
         </section>
         <section class="section4" id="section4">
-            <button onclick="window.location.href='gallery.html?main=sumatera'" class="CTA">Gallery</button>
+            <button onclick="window.location.href='gallery.html?main=sumatera'" class="CTA"><span id="default">Gallery</span><span id="onHover">Liat Gallery</span></button>
         </section>
     </main>
 
@@ -130,6 +130,7 @@
                 }
             }
         });
+        document.querySelector('.CTA').addEventListener('mousover')
     </script>
 </body>
 
