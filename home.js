@@ -3,19 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let prevPercentage = 0;
 
     const handleOnDown = e => {
-        // if (e.deltaX === 0 && e.deltaY === 0 || e.deltaX === 1 && e.deltaY === 1 || e.deltaX === -1 && e.deltaY === -1  ) {
-        //     return;
-        // }
-
-        // // e.preventDefault();
-
         track.dataset.mouseDownAt = e.deltaX;
         handleOnMove(e);
     }
 
     const handleOnUp = () => {
         track.dataset.mouseDownAt = "0";
-        // prevPercentage = track.dataset.prevPercentage;
     }
 
     const handleOnMove = e => {
