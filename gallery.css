@@ -84,6 +84,22 @@ section {
         }
     }
 
+    .backbutton {
+        position: fixed;
+        z-index: 3;
+        color: #fff;
+        font-family: var(--fontmonsterrat);
+        top: 7.5%;
+        left: 9.5%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease-out;
+
+        &:hover{
+            cursor: pointer;
+            color: #a4a4a4;
+        }
+    }
+
     nav,
     .hero,
     .cta {
@@ -100,10 +116,8 @@ section {
         align-items: center;
         color: #FFFFFF;
 
-        span {
-            color: #fff;
-            font-family: var(--fontmonsterrat);
-
+        span{
+            color: transparent;
         }
 
         h2 {

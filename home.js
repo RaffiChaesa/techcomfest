@@ -65,11 +65,11 @@ const handleIntersection = (entries, observer) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             odometerElements.forEach((odometer) => {
-                odometer.innerHTML = odometer.dataset.value; 
+                odometer.innerHTML = odometer.dataset.value;
                 new Odometer({
                     el: odometer,
-                    value: 0, 
-                }).update(odometer.dataset.value); 
+                    value: 0,
+                }).update(odometer.dataset.value);
             });
 
             observer.unobserve(entry.target);
@@ -119,6 +119,15 @@ document.querySelector('.Maluku').addEventListener('mouseover', function () {
     document.querySelector('.Maluku').style.animation = '.300s ease-out';
     document.querySelector('.Maluku').style.transform = 'scale(1.01)';
     document.querySelector('.Maluku').style.transformOrigin = 'center';
+
+    var indonesiaMap = document.getElementById('Indonesia Map');
+
+    var nttNtbElement = document.querySelector('.NTTdanNTB');
+    var malukuElement = document.querySelector('.Maluku');
+    var papuaElement = document.querySelector('.Papua');
+
+    indonesiaMap.insertBefore(nttNtbElement, malukuElement);
+    indonesiaMap.insertBefore(papuaElement, malukuElement);
 });
 document.querySelector('.NTTdanNTB').addEventListener('mouseover', function () {
     document.querySelector('#NTTNTBBackgroundLayer3').style.fill = '#006994';
@@ -136,6 +145,15 @@ document.querySelector('.NTTdanNTB').addEventListener('mouseover', function () {
     document.querySelector('.NTTdanNTB').style.animation = '.300s ease-out';
     document.querySelector('.NTTdanNTB').style.transform = 'scale(1.01)';
     document.querySelector('.NTTdanNTB').style.transformOrigin = 'center';
+
+    var indonesiaMap = document.getElementById('Indonesia Map');
+
+    var nttNtbElement = document.querySelector('.NTTdanNTB');
+    var jawaBaliElement = document.querySelector('.JawadanBali');
+    var malukuElement = document.querySelector('.Maluku');
+
+    indonesiaMap.insertBefore(jawaBaliElement, nttNtbElement);
+    indonesiaMap.insertBefore(malukuElement, nttNtbElement);
 });
 document.querySelector('.Papua').addEventListener('mouseover', function () {
     document.querySelector('#PapuaBackgroundLayer3').style.fill = '#006994';
@@ -150,6 +168,13 @@ document.querySelector('.Papua').addEventListener('mouseover', function () {
     document.querySelector('.Papua').style.animation = '.300s ease-out';
     document.querySelector('.Papua').style.transform = 'scale(1.01)';
     document.querySelector('.Papua').style.transformOrigin = 'center';
+
+    var indonesiaMap = document.getElementById('Indonesia Map');
+
+    var malukuElement = document.querySelector('.Maluku');
+    var papuaElement = document.querySelector('.Papua');
+
+    indonesiaMap.insertBefore(malukuElement, papuaElement);
 });
 document.querySelector('.Sulawesi').addEventListener('mouseover', function () {
     document.querySelector('#SulawesiBackgroundLayer3').style.fill = '#006994';
@@ -178,6 +203,15 @@ document.querySelector('.JawadanBali').addEventListener('mouseover', function ()
     document.querySelector('.JawadanBali').style.animation = '.300s ease-out';
     document.querySelector('.JawadanBali').style.transform = 'scale(1.01)';
     document.querySelector('.JawadanBali').style.transformOrigin = 'center';
+
+    var indonesiaMap = document.getElementById('Indonesia Map');
+
+    var sumateraElement = document.querySelector('.Sumatera');
+    var jawaBaliElement = document.querySelector('.JawadanBali');
+    var nttNtbElement = document.querySelector('.NTTdanNTB');
+
+    indonesiaMap.insertBefore(sumateraElement, jawaBaliElement);
+    indonesiaMap.insertBefore(nttNtbElement, jawaBaliElement);
 });
 document.querySelector('.Sumatera').addEventListener('mouseover', function () {
     document.querySelector('#SumateraBackgroundLayer3').style.fill = '#006994';
@@ -192,6 +226,13 @@ document.querySelector('.Sumatera').addEventListener('mouseover', function () {
     document.querySelector('.Sumatera').style.animation = '.300s ease-out';
     document.querySelector('.Sumatera').style.transform = 'scale(1.01)';
     document.querySelector('.Sumatera').style.transformOrigin = 'center';
+
+    var indonesiaMap = document.getElementById('Indonesia Map');
+
+    var sumateraElement = document.querySelector('.Sumatera');
+    var jawaBaliElement = document.querySelector('.JawadanBali');
+
+    indonesiaMap.insertBefore(jawaBaliElement, sumateraElement);
 });
 document.querySelector('.Kalimantan').addEventListener('mouseout', function () {
     document.querySelector('#KalimantanBackgroundLayer3').style.fill = '';
@@ -242,7 +283,7 @@ document.querySelector('.Papua').addEventListener('mouseout', function () {
     document.querySelector('#PulauPapua').style.fill = '';
     document.querySelector('.Papua').style.cursor = 'default';
     document.querySelector('.Papua').style.transform = '';
-});        
+});
 document.querySelector('.Sulawesi').addEventListener('mouseout', function () {
     document.querySelector('#SulawesiBackgroundLayer3').style.fill = '';
     document.querySelector('#SulawesiBackgroundLayer2').style.fill = '';
