@@ -1,16 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap');
 
 :root {
-    --min-font-size: 16px;
-    /* Minimum font size for mobile */
-    --max-font-size: 24px;
-    /* Maximum font size for desktop */
-
-    --Tiny: clamp(0.75rem, calc(var(--min-font-size) * 0.75), calc(var(--max-font-size) * 0.75));
-    --Small: clamp(0.75rem, calc(var(--min-font-size) * 0.75), calc(var(--max-font-size) * 0.75));
-    --Medium: clamp(1rem, calc(var(--min-font-size) * 1), calc(var(--max-font-size) * 1));
-    --Large: clamp(2rem, calc(var(--min-font-size) * 2), calc(var(--max-font-size) * 2));
-    --Title: clamp(3rem, calc(var(--min-font-size) * 3), calc(var(--max-font-size) * 3));
+    --Tiny: clamp(0.75rem, 0.571rem + 0.476vw, 1rem);
+    --Small: clamp(0.75rem, 0.393rem + 0.952vw, 1.25rem);
+    --Medium: clamp(1rem, 0.464rem + 1.429vw, 1.75rem);
+    --Large: clamp(2rem, 0.661rem + 3.571vw, 3.875rem);
+    --Title: clamp(3rem, 1.036rem + 5.238vw, 5.75rem);
 
 
     /*Font Family*/
@@ -60,6 +55,8 @@ section {
 
 .IndexHTML,
 .IndexBody,
+.ExploreHTML,
+.ExploreBody,
 .GalleryHTML,
 .GalleryHTML {
     overscroll-behavior-x: none;
@@ -178,7 +175,7 @@ section {
         display: flex;
         flex-direction: column;
         background-color: var(--White);
-        background-image: url(assets/home/top-left-bg.png), url(assets/home/top-right-bg.png), url(assets/home/bottom-bg.png);
+        background-image: url(assets/Desktop/Index/top-left-bg.png), url(assets/Desktop/Index/top-right-bg.png), url(assets/Desktop/Index/bottom-bg.png);
         background-repeat: no-repeat, no-repeat, no-repeat;
         background-position: top left, top right, bottom;
         background-size: 15%, 15%, 100%;
@@ -335,9 +332,13 @@ section {
 .ExploreBody {
 
     .section1 {
-        background-image: url(assets/Explore-img/Background1_ExplorePage.png);
+        background-image: url(assets/Desktop/Explore-img/Background1_ExplorePage.png);
         background-repeat: no-repeat;
         background-size: cover;
+
+        #Logo {
+            position: fixed;
+        }
 
         .section1Details {
             /*position*/
@@ -394,7 +395,7 @@ section {
 
 
     .section2 {
-        background-image: url(assets/Explore-img/Section1Dec1.png);
+        background-image: url(assets/Desktop/Explore-img/Section1Dec1.png);
         background-repeat: no-repeat;
         background-position: top right;
         background-size: 30%;
@@ -459,7 +460,7 @@ section {
     }
 
     .section3 {
-        background-image: url(assets/Explore-img/Section2Dec1.png);
+        background-image: url(assets/Desktop/Explore-img/Section2Dec1.png);
         background-repeat: no-repeat;
         background-position-y: center;
         background-size: 20%;
@@ -531,7 +532,7 @@ section {
         justify-content: center;
 
         #NextButton {
-            background-image: url(assets/Explore-img/Section4CTABackground.png);
+            background-image: url(assets/Desktop/Explore-img/Section4CTABackground.png);
             background-size: cover;
             background-repeat: no-repeat;
             border: none;
@@ -569,8 +570,8 @@ section {
     }
 }
 
+
 #Logo {
-    position: absolute;
     left: 95%;
     top: 5%;
     transform: translate(-95%, -5%);
@@ -584,6 +585,7 @@ section {
 
 #CTAButton {
     position: absolute;
+    animation-timeline: auto;
     top: 90%;
     left: 95%;
     transform: translate(-95%, -90%);
@@ -619,6 +621,11 @@ section {
         color: var(--White);
         /* margin-bottom: 7rem; */
 
+        #Logo {
+            position: fixed;
+            animation-timeline: auto;
+        }
+
         .image-bg {
             position: fixed;
             top: 0;
@@ -639,7 +646,6 @@ section {
             }
         }
 
-        nav,
         .hero {
             position: relative;
             z-index: 1;
