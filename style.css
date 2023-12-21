@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&display=swap');
 
 :root {
     --Tiny: clamp(0.75rem, 0.571rem + 0.476vw, 1rem);
@@ -777,7 +777,7 @@ section {
             align-items: center;
             gap: 0.625rem;
             border-radius: 0.7rem;
-            background-image: url(assets/gallery/back-bg.jpg);
+            background-image: url(assets/Desktop/gallery/back-bg.jpg);
             background-size: cover;
             background-position: center;
             border: none;
