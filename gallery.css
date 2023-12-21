@@ -26,10 +26,12 @@
 body {
     overflow-x: hidden;
     /* background-color: ; */
+    /* background-color: #040A06; */
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
 }
 
 html,
@@ -95,7 +97,7 @@ section {
         transition: all 0.3s ease-out;
         animation-timeline: auto;
 
-        &:hover{
+        &:hover {
             cursor: pointer;
             color: #a4a4a4;
         }
@@ -117,7 +119,7 @@ section {
         align-items: center;
         color: #FFFFFF;
 
-        span{
+        span {
             color: transparent;
         }
 
@@ -132,6 +134,7 @@ section {
     }
 
     .hero {
+        --parallax-speed: -5;
         height: 65%;
         display: flex;
         flex-direction: column;
@@ -197,19 +200,25 @@ section {
     position: relative;
     z-index: 1;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    align-items: start;
+    justify-content: end;
     background-color: #040A06;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     padding: 15rem 0rem;
-    gap: 20rem;
+    gap: -2rem;
+
+    .img-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20rem;
+    }
 
     .img-section {
         display: flex;
         flex-direction: column;
         gap: 3rem;
-        width: auto;
-        width: 100vw;
+        width: 60vw;
         align-items: center;
 
         img {
@@ -217,6 +226,45 @@ section {
             max-height: 32rem;
             object-fit: cover;
             object-position: center;
+        }
+    }
+
+    .sidebar * {
+        animation: parallax linear;
+        animation-timeline: scroll();
+    }
+
+    .sidebar {
+        --parallax-speed: -1;
+        width: 20vw;
+        height: 800px;
+        background-color: transparent;
+        position: sticky;
+        top: 100px;
+
+        .img-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: auto;
+            align-items: center;
+
+            img {
+                width: 5rem;
+                max-height: 4rem;
+                object-fit: cover;
+                object-position: center;
+                transition: all 0.3s linear;
+            }
+
+            img:hover {
+                cursor: pointer;
+                width: 6rem;
+            }
+        }
+
+        .img-section+.img-section {
+            margin: 2rem 0;
         }
     }
 }

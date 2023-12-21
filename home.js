@@ -78,7 +78,7 @@ const odometerObserver = new IntersectionObserver(handleIntersection, {
 odometerElements.forEach((odometer) => {
     odometerObserver.observe(odometer);
 });
-
+    
 
 
 
