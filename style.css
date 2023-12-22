@@ -63,6 +63,9 @@ section {
 }
 
 @media only screen and (max-width: 600px) {
+    #paragraphMobile {
+        display: none;
+    }
     .IndexBody {
 
         .sect-1 * {
@@ -806,8 +809,7 @@ section {
                     color: var(--White);
                     text-align: center;
                     font-family: var(--fontmonsterrat);
-                    /* font-size: 2.5rem; */
-                    font-size: var(--Medium);
+                    font-size: var(--Small);
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
@@ -816,8 +818,7 @@ section {
                 #h1 {
                     color: var(--White);
                     font-family: var(--fontplayfair);
-                    /* font-size: 6rem; */
-                    font-size: var(--Title);
+                    font-size: var(--Large);
                     font-style: normal;
                     font-weight: 700;
                     line-height: normal;
@@ -840,7 +841,7 @@ section {
                     border: 1px solid var(--White);
                     color: var(--White);
                     font-family: var(--fontmonsterrat);
-                    font-size: var(--Small);
+                    font-size: var(--Tiny);
                     font-style: normal;
                     font-weight: 500;
                     line-height: normal;
@@ -862,10 +863,10 @@ section {
             display: flex;
             flex-direction: column;
             background-color: var(--White);
-            background-image: url(assets/Desktop/Index/top-left-bg.png), url(assets/Desktop/Index/top-right-bg.png), url(assets/Desktop/Index/bottom-bg.png);
-            background-repeat: no-repeat, no-repeat, no-repeat;
-            background-position: top left, top right, bottom;
-            background-size: 15%, 15%, 100%;
+            background-image: url(assets/Desktop/Index/top-left-bg.png), url(assets/Desktop/Index/top-right-bg.png), url(assets/Desktop/Index/bottom-bg.png), url(assets/Desktop/Index/bottom-left-right-bg.png);
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: top left, top right, bottom, bottom;
+            background-size: 15%, 15%, 10%, contain;
             background-position-y: auto, auto, 10%;
             width: 100%;
             justify-content: start;
@@ -878,29 +879,27 @@ section {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                gap: 0.625rem;
                 flex-shrink: 0;
 
                 span {
                     text-align: center;
                     font-family: Playfair Display;
-                    font-size: var(--Medium);
+                    font-size: var(--Small);
                     font-style: normal;
-                    font-weight: 700;
+                    font-weight: 600;
                     line-height: normal;
                 }
 
                 p {
                     color: var(--Black);
                     text-align: center;
-                    /* margin-top: -3em; */
                     /* Text */
-                    font-family: Montserrat;
-                    font-size: var(--Small);
+                    font-family: var(--fontmonsterrat);
+                    font-size: var(--Tiny);
                     font-style: normal;
-                    font-weight: 800;
+                    font-weight: 400;
                     line-height: normal;
-                    /* text-align: justify; */
+                    text-align: justify;
                 }
             }
 
@@ -927,6 +926,10 @@ section {
 
         .sect-3 {
             background-color: var(--Green-Shade);
+            background-image: url(assets/Desktop/Index/section3bottombackground.png), url(assets/Desktop/Index/section3topbackground.png), url(assets/Desktop/Index/section3topleftrightbackground.png);
+            background-repeat: no-repeat;
+            background-position: bottom, top, top;
+            background-size: contain, 10%, contain;
             position: relative;
             z-index: 1;
             display: flex;
@@ -962,7 +965,7 @@ section {
                 #h1 {
                     text-align: center;
                     font-family: var(--fontplayfair);
-                    font-size: var(--Medium);
+                    font-size: var(--Small);
                     font-style: normal;
                     font-weight: 700;
                     line-height: normal;
@@ -995,20 +998,20 @@ section {
                 #islandMeter,
                 #populationMeter,
                 #ethnicMeter {
-                    font-size: var(--Medium);
+                    font-size: var(--Small);
                     font-weight: 700;
                     letter-spacing: 0.1rem;
                 }
 
                 #million {
                     margin-left: .3rem;
-                    font-size: var(--Medium);
+                    font-size: var(--Small);
                     font-weight: 700;
                     letter-spacing: 0.1rem;
                 }
 
                 #CountSubtitle {
-                    font-size: var(--Small);
+                    font-size: var(--Tiny);
                     font-weight: 700;
                 }
 
@@ -1023,7 +1026,6 @@ section {
     .ExploreBody {
 
         .section1 {
-            background-image: url(assets/Desktop/Explore-img/Background1_ExplorePage.png);
             background-repeat: no-repeat;
             background-size: cover;
 
@@ -1042,7 +1044,7 @@ section {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 1rem;
-                max-width: 30rem;
+                max-width: 30%;
 
                 div {
                     color: var(--Green-Shade);
@@ -1086,7 +1088,7 @@ section {
 
 
         .section2 {
-            background-image: url(assets/Desktop/Explore-img/Section1Dec1.png);
+            background-image: url(assets/Desktop/Explore-img//Section1Dec1.png);
             background-repeat: no-repeat;
             background-position: top right;
             background-size: 30%;
@@ -1106,7 +1108,7 @@ section {
                 position: relative;
                 flex-direction: column;
                 align-items: center;
-                max-width: 34rem;
+                max-width: 40%;
 
                 #Content1 {
                     max-width: 55%;
@@ -1130,7 +1132,7 @@ section {
             .Details {
                 flex-direction: column;
                 padding-right: 5%;
-                max-width: 30rem;
+                max-width: 35%;
                 gap: 0.5rem;
 
                 #h3 {
@@ -1163,10 +1165,10 @@ section {
         }
 
         .section3 {
-            background-image: url(assets/Desktop/Explore-img/Section2Dec1.png);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-size: 20%;
+            background-image: url(assets/Desktop/Explore-img/Section2Dec1.png), url(assets/Desktop/Explore-img/Section2Dec2.png);
+            background-repeat: no-repeat, no-repeat;
+            background-position: top left, bottom right ;
+            background-size: 20%, unset;
             background-color: var(--Green-Shade);
             display: flex;
             flex-direction: row-reverse;
@@ -1186,7 +1188,7 @@ section {
                 position: relative;
                 flex-direction: column;
                 align-items: center;
-                max-width: 34rem;
+                max-width: 35%;
                 justify-content: center;
 
                 #Content3 {
@@ -1274,7 +1276,8 @@ section {
         top: 5%;
         transform: translateY(-5%);
         text-decoration: none;
-        color: var(--White, #FFF);
+        color: var(--Black);
+        font-weight: 600;
         text-align: center;
         font-family: var(--fontmonsterrat);
         font-weight: 500;
@@ -1328,6 +1331,10 @@ section {
     }
 
     .GalleryBody {
+
+        #BackButton {
+            color: var(--White);
+        }
 
         .section1 * {
             animation: parallax linear;
@@ -1396,14 +1403,14 @@ section {
                 text-align: left;
 
                 #span {
-                    font-size: var(--Medium);
+                    font-size: var(--Small);
                     /*2rem would be good*/
                 }
 
                 p {
                     padding-right: 5rem;
                     font-weight: 400;
-                    font-size: var(--Small);
+                    font-size: var(--Tiny);
                 }
             }
 
@@ -1504,7 +1511,7 @@ section {
                 background-position: center;
                 border: none;
                 color: #FFF;
-                font-size: clamp(2rem, 0.5rem + 0.7vw, 4rem);
+                font-size: var(--Medium);
                 font-weight: 600;
                 cursor: pointer;
                 transition: padding 0.5s ease-out;
