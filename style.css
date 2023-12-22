@@ -190,20 +190,17 @@ section {
             }
 
             .image-track {
-                display: flex;
-                width: 95.5rem;
+                display: grid;
+                grid-template-columns: repeat(2, 0.1fr);
+                width: 100vw;
                 height: 60%;
                 justify-content: center;
                 align-items: center;
-                gap: 1rem;
-                position: absolute;
-                left: 50%;
-                top: 53%;
-                transform: translate(0%, -50%);
+                gap: 0.5rem;
 
                 .image {
-                    width: 12rem;
-                    height: 17rem;
+                    width: 8rem;
+                    height: 6rem;
                     object-fit: cover;
                     object-position: center;
                 }
