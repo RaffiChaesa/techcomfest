@@ -46,10 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.onmouseup = e => handleOnUp(e);
 
     window.ontouchend = e => handleOnUp(e.touches[0]);
-
-    // window.onmousemove = e => handleOnMove(e);
-
-    // window.ontouchmove = e => handleOnMove(e.touches[0]);
 });
 
 
@@ -79,8 +75,6 @@ odometerElements.forEach((odometer) => {
     odometerObserver.observe(odometer);
 });
     
-
-
 
 document.querySelector('.Kalimantan').addEventListener('mouseover', function () {
     document.querySelector('#KalimantanBackgroundLayer3').style.fill = '#006994';
@@ -205,6 +199,7 @@ document.querySelector('.JawadanBali').addEventListener('mouseover', function ()
 
     indonesiaMap.insertBefore(sumateraElement, jawaBaliElement);
     indonesiaMap.insertBefore(nttNtbElement, jawaBaliElement);
+
 });
 document.querySelector('.Sumatera').addEventListener('mouseover', function () {
     document.querySelector('#SumateraBackgroundLayer3').style.fill = '#006994';
@@ -265,6 +260,13 @@ document.querySelector('.NTTdanNTB').addEventListener('mouseout', function () {
     document.querySelector('#PulauNTTdanNTB').style.fill = '';
     document.querySelector('.NTTdanNTB').style.cursor = 'default';
     document.querySelector('.NTTdanNTB').style.transform = '';
+
+    var indonesiaMap = document.getElementById('Indonesia Map');
+
+    var jawaBaliElement = document.querySelector('.JawadanBali');
+    var nttNtbElement = document.querySelector('.NTTdanNTB');
+
+    indonesiaMap.insertBefore(nttNtbElement, jawaBaliElement);
 });
 document.querySelector('.Papua').addEventListener('mouseout', function () {
     document.querySelector('#PapuaBackgroundLayer3').style.fill = '';
@@ -298,6 +300,13 @@ document.querySelector('.JawadanBali').addEventListener('mouseout', function () 
     document.querySelector('#PulauJawadanBali').style.fill = '';
     document.querySelector('.JawadanBali').style.cursor = 'default';
     document.querySelector('.JawadanBali').style.transform = '';
+
+    var indonesiaMap = document.getElementById('Indonesia Map');
+
+    var sumateraElement = document.querySelector('.Sumatera');
+    var jawaBaliElement = document.querySelector('.JawadanBali');
+
+    indonesiaMap.insertBefore(jawaBaliElement, sumateraElement);
 });
 document.querySelector('.Sumatera').addEventListener('mouseout', function () {
     document.querySelector('#SumateraBackgroundLayer3').style.fill = '';
