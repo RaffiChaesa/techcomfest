@@ -5,7 +5,7 @@
     --Small: clamp(0.75rem, 0.393rem + 0.952vw, 1.25rem);
     --Medium: clamp(1rem, 0.464rem + 1.429vw, 1.75rem);
     --Large: clamp(2rem, 0.661rem + 3.571vw, 3.875rem);
-    --Title: clamp(3rem, 1.036rem + 5.238vw, 5.75rem);
+    --Title: clamp(3rem, 2.107rem + 2.381vw, 4.25rem);
 
 
     /*Font Family*/
@@ -538,7 +538,7 @@ section {
         font-family: var(--fontmonsterrat);
         font-weight: 500;
         font-size: var(--Tiny);
-        z-index: 2;
+        z-index: 3;
         transition: all 0.3s ease-out;
         animation-timeline: auto;
 
@@ -615,34 +615,34 @@ section {
 
             .hero {
                 position: absolute;
-                left: 95%;
+                left: 50%;
                 top: 50%;
                 animation-timeline: auto;
-                transform: translate(-95%, -50%);
-                --parallax-speed: -5;
-                width: 40%;
+                transform: translate(-50%, -50%);
+                width: 80%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                align-items: start;
+                align-items: center;
                 color: var(--White);
                 text-align: center;
                 font-family: var(--fontmonsterrat);
                 font-style: normal;
                 font-weight: 600;
                 line-height: normal;
-                gap: 5rem;
-                text-align: left;
+                gap: 3rem;
 
                 #span {
                     font-size: var(--Medium);
                     /*2rem would be good*/
+                    text-align: center;
                 }
 
                 p {
-                    padding-right: 5rem;
                     font-weight: 400;
                     font-size: var(--Small);
+                    text-align: justify;
+                    text-justify: newspaper;
                 }
             }
 
@@ -653,8 +653,8 @@ section {
             position: relative;
             z-index: 1;
             display: flex;
-            align-items: start;
-            justify-content: end;
+            align-items: center;
+            justify-content: center;
             background-color: #040A06;
             /* overflow-y: hidden; */
             padding: 15rem 0rem;
@@ -671,11 +671,11 @@ section {
                 display: flex;
                 flex-direction: column;
                 gap: 3rem;
-                width: 60vw;
+                width: 100vw;
                 align-items: center;
 
                 img {
-                    width: 42rem;
+                    width: 70%;
                     max-height: 32rem;
                     object-fit: cover;
                     object-position: center;
@@ -683,42 +683,7 @@ section {
             }
 
             .sidebar * {
-                animation: parallax linear;
-                animation-timeline: scroll();
-            }
-
-            .sidebar {
-                --parallax-speed: -1;
-                width: 20vw;
-                height: 800px;
-                background-color: transparent;
-                position: sticky;
-                top: 100px;
-
-                .img-section {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.5rem;
-                    width: auto;
-                    align-items: center;
-
-                    img {
-                        width: 5rem;
-                        max-height: 4rem;
-                        object-fit: cover;
-                        object-position: center;
-                        transition: all 0.3s linear;
-                    }
-
-                    img:hover {
-                        cursor: pointer;
-                        width: 6rem;
-                    }
-                }
-
-                .img-section+.img-section {
-                    margin: 2rem 0;
-                }
+                display: none;
             }
         }
 
@@ -757,7 +722,7 @@ section {
                 }
             }
 
-            button:hover {
+            button:active {
                 padding: 12rem 20rem;
 
                 /* &::before {
