@@ -66,6 +66,7 @@ section {
     #paragraphMobile {
         display: none;
     }
+
     .IndexBody {
 
         .sect-1 * {
@@ -503,7 +504,7 @@ section {
             display: flex;
             align-items: center;
             justify-content: center;
-            
+
 
             #NextButton {
                 background-image: url(assets/Mobile/Explore-img/GotoGalleryButtonBackground.png);
@@ -592,7 +593,7 @@ section {
         .section1 {
             width: 100vw;
             background-image: url(assets/Mobile/gallery/Section1Background.png);
-            background-size: cover ;
+            background-size: cover;
             background-position: bottom;
             background-repeat: no-repeat;
             color: var(--White);
@@ -876,7 +877,7 @@ section {
                 span {
                     text-align: center;
                     font-family: Playfair Display;
-                    font-size: var(--Small);
+                    font-size: var(--Medium);
                     font-style: normal;
                     font-weight: 600;
                     line-height: normal;
@@ -957,7 +958,7 @@ section {
                 #h1 {
                     text-align: center;
                     font-family: var(--fontplayfair);
-                    font-size: var(--Small);
+                    font-size: var(--Medium);
                     font-style: normal;
                     font-weight: 700;
                     line-height: normal;
@@ -1022,7 +1023,28 @@ section {
             background-size: cover;
 
             #Logo {
-                position: fixed;
+                position: absolute;
+            }
+
+            #back {
+                position: absolute;
+                left: 5%;
+                top: 5%;
+                transform: translateY(-5%);
+                text-decoration: none;
+                color: var(--White);
+                font-weight: 600;
+                text-align: center;
+                font-family: var(--fontmonsterrat);
+                font-weight: 500;
+                font-size: var(--Tiny);
+                z-index: 3;
+                transition: all 0.3s ease-out;
+                animation-timeline: auto;
+
+                &:hover {
+                    color: gray;
+                }
             }
 
             .section1Details {
@@ -1159,7 +1181,7 @@ section {
         .section3 {
             background-image: url(assets/Desktop/Explore-img/Section2Dec1.png), url(assets/Desktop/Explore-img/Section2Dec2.png);
             background-repeat: no-repeat, no-repeat;
-            background-position: top left, bottom right ;
+            background-position: top left, bottom right;
             background-size: 20%, unset;
             background-color: var(--Green-Shade);
             display: flex;
@@ -1279,7 +1301,7 @@ section {
         animation-timeline: auto;
 
         &:hover {
-            color: var(--Sage-Green);
+            color: gray;
         }
     }
 
