@@ -58,7 +58,7 @@ section {
 .ExploreHTML,
 .ExploreBody,
 .GalleryHTML,
-.GalleryHTML {
+.GalleryBody {
     overscroll-behavior-x: none;
 }
 
@@ -467,10 +467,10 @@ section {
                     max-width: 90%;
                     align-self: start;
                     size: 10%;
-                    position: relative;
-                    left: 10%;
-                    top: 50%;
-                    transform: translate(-10%, -5%), ;
+                    position: absolute;
+                    left: 30%;
+                    top: 210%;
+                    transform: translate(-100%, -5%), ;
                 }
             }
 
@@ -511,6 +511,7 @@ section {
             display: flex;
             align-items: center;
             justify-content: center;
+            
 
             #NextButton {
                 background-image: url(assets/Mobile/Explore-img/GotoGalleryButtonBackground.png);
@@ -518,15 +519,19 @@ section {
                 background-repeat: no-repeat;
                 background-position: bottom;
                 border: none;
-                border-radius: 3.125rem;
+                border-radius: 0.7rem;
                 font-size: var(--Large);
                 font-family: var(--fontplayfair);
                 font-weight: 700;
                 color: var(--White);
                 width: 40%;
-                height: 60%;
-
+                height: 50%;
+                justify-content: center;
+                align-items: center;
+                gap: 0.625rem;
             }
+
+
         }
     }
 
@@ -700,7 +705,7 @@ section {
             width: 100vw;
 
             button {
-                font-family: 'Playfair Display', sans-serif;
+                font-family: var(--fontplayfair);
                 padding: 12rem 5rem;
                 justify-content: center;
                 align-items: center;
@@ -711,18 +716,10 @@ section {
                 background-position: center;
                 border: none;
                 color: #FFF;
-                font-size: clamp(2rem, 0.5rem + 0.7vw, 4rem);
+                font-size: var(--Medium);
                 font-weight: 600;
                 cursor: pointer;
                 transition: padding 0.5s ease-out;
-
-                .home {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    z-index: 3;
-                }
             }
 
             button:active {
@@ -1242,18 +1239,24 @@ section {
 
             #NextButton {
                 background-image: url(assets/Desktop/Explore-img/Section4CTABackground.png);
+                font-family: 'Playfair Display', sans-serif;
+                padding: 12rem 5rem;
+                justify-content: center;
+                align-items: center;
+                gap: 0.625rem;
+                border-radius: 0.7rem;
                 background-size: cover;
-                background-repeat: no-repeat;
+                background-position: center;
                 border: none;
-                border-radius: 3.125rem;
-                font-size: var(--Large);
-                font-family: var(--fontplayfair);
-                font-weight: 700;
-                color: var(--White);
-                /*unresponsive*/
-                width: 60%;
-                height: 60%;
+                color: #FFF;
+                font-size: clamp(2rem, 0.5rem + 0.7vw, 4rem);
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.5s ease-out;
 
+                &:hover {
+                    padding: 12rem 20rem;
+                }
             }
         }
     }
@@ -1270,7 +1273,7 @@ section {
         font-family: var(--fontmonsterrat);
         font-weight: 500;
         font-size: var(--Tiny);
-        z-index: 2;
+        z-index: 3;
         transition: all 0.3s ease-out;
         animation-timeline: auto;
 
@@ -1335,7 +1338,7 @@ section {
             /* margin-bottom: 7rem; */
 
             #Logo {
-                position: fixed;
+                position: absolute;
                 animation-timeline: auto;
             }
 
