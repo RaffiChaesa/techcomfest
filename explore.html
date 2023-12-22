@@ -6,11 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0.3vw;
+            background: linear-gradient(to bottom, #304d30, #6e826e);
+            height: 0%;
+            z-index: 100;
+            transition: height 0.2s ease-out;
+        }
+    </style>
 </head>
 
 <body class="ExploreBody">
     <main id="sumatera" class="explore-main">
         <section class="section1">
+            <div id="progress-bar"></div>
             <a id="BackButton" href="index.html">Back</a>
             <span id="Logo">Pesona</span>
             <div class="section1Details">
@@ -37,7 +50,11 @@
             <div class="Details">
                 <span id="h3">Culture</span>
                 <span id="h2">Culture in Sumatera</span>
-                <p>Sumatra's culture is diverse and rich, with unique traditions among its ethnic groups. Batak people showcase customs and the Tortor dance, while the Minangkabau have a matriarchal tradition and perform the randai dance. Artistic expressions like woodcarving and songket weaving highlight cultural beauty. Traditional performances, including wayang kulit and gamelan music, along with iconic dishes like rendang and sate padang, contribute to Sumatra's cultural wealth.</p>
+                <p>Sumatra's culture is diverse and rich, with unique traditions among its ethnic groups. Batak people
+                    showcase customs and the Tortor dance, while the Minangkabau have a matriarchal tradition and
+                    perform the randai dance. Artistic expressions like woodcarving and songket weaving highlight
+                    cultural beauty. Traditional performances, including wayang kulit and gamelan music, along with
+                    iconic dishes like rendang and sate padang, contribute to Sumatra's cultural wealth.</p>
             </div>
         </section>
         <section class="section3" id="section3">
@@ -47,11 +64,16 @@
             <div class="Details">
                 <span id="h3">Culture</span>
                 <span id="h2">Culture in Sumatera</span>
-                <p>Sumatra's culture is diverse and rich, with unique traditions among its ethnic groups. Batak people showcase customs and the Tortor dance, while the Minangkabau have a matriarchal tradition and perform the randai dance. Artistic expressions like woodcarving and songket weaving highlight cultural beauty. Traditional performances, including wayang kulit and gamelan music, along with iconic dishes like rendang and sate padang, contribute to Sumatra's cultural wealth.</p>
+                <p>Sumatra's culture is diverse and rich, with unique traditions among its ethnic groups. Batak people
+                    showcase customs and the Tortor dance, while the Minangkabau have a matriarchal tradition and
+                    perform the randai dance. Artistic expressions like woodcarving and songket weaving highlight
+                    cultural beauty. Traditional performances, including wayang kulit and gamelan music, along with
+                    iconic dishes like rendang and sate padang, contribute to Sumatra's cultural wealth.</p>
             </div>
         </section>
         <section class="section4" id="section4">
-            <button onclick="window.location.href='gallery.html?main=sumatera'" id="NextButton"><span id="default">Gallery</span><span id="onHover">Liat Gallery</span></button>
+            <button onclick="window.location.href='gallery.html?main=sumatera'" id="NextButton"><span
+                    id="default">Gallery</span><span id="onHover">Liat Gallery</span></button>
         </section>
     </main>
 
@@ -128,7 +150,19 @@
                 }
             }
         });
-        document.querySelector('.CTA').addEventListener('mousover')
+
+        const progressBar = document.querySelector("#progress-bar");
+        const section = document.querySelector("body");
+
+        const animateProgressBar = () => {
+            let scrollDistance = -section.getBoundingClientRect().top;
+            let progressHeight = (scrollDistance / (section.getBoundingClientRect().height - document.documentElement.clientHeight)) * 100;
+            let value = Math.floor(progressHeight)
+            console.log(progressHeight);
+            progressBar.style.height = progressHeight + "%"
+        }
+
+        window.addEventListener("scroll", animateProgressBar);
     </script>
 </body>
 
